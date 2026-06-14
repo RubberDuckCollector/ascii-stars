@@ -11,7 +11,7 @@
 
 # ASCII stars
 
-Program that can generate 
+Program that can generate space-themed ASCII art
 
 # Install
 
@@ -25,4 +25,4 @@ I nearly always prefer art that I have created myself as my backgrounds/PFPs
 
 # Inspiration
 
-- The ASCII art in [Exercise 067](https://codeberg.org/ziglings/exercises/src/branch/main/exercises/067_comptime2.zig) of [ziglings](https://ziglings.org/)
+- The ASCII art in [exercise 067](https://codeberg.org/ziglings/exercises/src/branch/main/exercises/067_comptime2.zig) of [Ziglings](https://ziglings.org/)
