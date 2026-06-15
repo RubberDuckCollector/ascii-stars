@@ -66,6 +66,9 @@ fn main() {
         for _ in 1..=terminal_size.columns {
             let is_filled_in_with_star: u8 = rand::random_range(0..=2);
             match is_filled_in_with_star {
+                // Source - https://stackoverflow.com/a/34215930
+                // Posted by DK., modified by community. See post 'Timeline' for change history
+                // Retrieved 2026-06-15, License - CC BY-SA 4.0
                 0 => match star_symbols.choose(&mut rand::rng()) {
                     Some(i) => print!("{}", Style::new().on(Color::Black).paint(i)),
                     None => panic!("Error while deciding what star should go in the space."),
