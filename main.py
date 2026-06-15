@@ -1,6 +1,7 @@
 import os
 import random
 import readline
+import subprocess
 import my_modules
 
 
@@ -10,7 +11,7 @@ def main():
     print(terminal_size.columns)
     print(terminal_size.lines)
 
-    os.system("clear")
+    subprocess.run("clear")
     print(my_modules.Color.BlackBg)
     print(my_modules.Color.Dim)
     for i in range(terminal_size.lines):
