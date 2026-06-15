@@ -41,9 +41,13 @@ fn main() {
 
     println!("About to generate screen. Press enter to continue.");
 
-    let dot_symbol = ".".to_string();
-    let asterisk_symbol = "*".to_string();
-    let o_symbol = "o".to_string();
+    // let dot_symbol = ".".to_string();
+    // let asterisk_symbol = "*".to_string();
+    // let o_symbol = "o".to_string();
+
+    let dot_symbol = String::from(".");
+    let asterisk_symbol = String::from("*");
+    let o_symbol = String::from("o");
 
     let mut star_symbols = vec![dot_symbol, asterisk_symbol, o_symbol];
 
@@ -86,4 +90,7 @@ fn main() {
 
     // let x: f32 = rng.random();
     // println!("rand f32 0.0..=1.0: {}", x);
+
+    // TODO: define the screen as a 2d array that can be looped over
+    // macros and structs to turn each cell into its own object with .occupied attribute, etc.?
 }
