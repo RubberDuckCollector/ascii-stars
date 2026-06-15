@@ -1,7 +1,6 @@
-use std::ops::Range;
-
 use ansi_term::Color;
 use ansi_term::Style;
+use std::io::Write;
 
 mod terminal_management;
 
@@ -48,9 +47,13 @@ fn main() {
 
     clear_screen();
 
-    for i in 1..=terminal_size.lines {
-        for j in 1..=terminal_size.columns {
+    for _ in 1..=terminal_size.lines {
+        for _ in 1..=terminal_size.columns {
             print!("{}", Style::new().on(Color::Black).paint(" "));
         }
     }
+    std::io::stdout().flush().unwrap(); // makes the text print immediately
+
+    let mut msg = "".to_string();
+    std::io::stdin().read_line(&mut msg).unwrap(); // input to pause execution after the colored text is done (can verify the screen works)
 }
