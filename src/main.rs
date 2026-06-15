@@ -1,5 +1,6 @@
 use ansi_term::Color;
 use ansi_term::Style;
+use rand::prelude::*;
 use std::io::Write;
 
 mod terminal_management;
@@ -26,4 +27,9 @@ fn main() {
 
     let mut msg = "".to_string();
     std::io::stdin().read_line(&mut msg).unwrap(); // input to pause execution after the colored text is done (can verify the screen works)
+
+    let mut rng = rand::rng(); // get rng object
+    let x: f32 = rng.random();
+
+    println!("rand f32 0.0..=1.0: {}", x);
 }

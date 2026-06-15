@@ -6,4 +6,5 @@ edition = "2024"
 [dependencies]
 ansi_term = "0.12.1"
 inquire = "0.9.4"
+rand = "0.10.1"
 terminal_size = "0.4.4"

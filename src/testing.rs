@@ -19,3 +19,11 @@
 // my_string = "Blue text on a black background! (progress!)".to_string();
 
 // println!("{}", Color::Blue.on(Color::Black).paint(my_string));
+
+// println!(
+//     "rand char from rng: {}",
+//     rng.sample(rand::distr::Alphanumeric) as char
+// ); // rand char from rand int
+
+// let y: u8 = rand::random_range(0..=100);
+// println!("rand int 0..=100: {}", y);
