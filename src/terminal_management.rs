@@ -23,7 +23,7 @@ impl TerminalSize {
 pub fn get_terminal_size() -> TerminalSize {
     let terminal_size = terminal_size(); // returns an Option
 
-    // this destructs the Option and releases w and h into the current scope
+    // this destructures the Option and releases columns and height into the current scope
     let (columns, lines) = terminal_size
         .map(|(Width(w), Height(h))| (w, h))
         .unwrap_or((80, 24));
