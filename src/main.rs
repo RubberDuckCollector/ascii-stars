@@ -16,6 +16,14 @@ struct Stars {
     o: String,
 }
 
+// Source - https://stackoverflow.com/a/57067262
+// Posted by Magix, modified by community. See post 'Timeline' for change history
+// Retrieved 2026-06-16, License - CC BY-SA 4.0
+
+fn remove_whitespace(s: &str) -> String {
+    s.split_whitespace().collect()
+}
+
 impl Stars {
     fn instantiate_stars(param_dot: String, param_asterisk: String, param_o: String) -> Stars {
         Stars {
@@ -35,19 +43,29 @@ fn main() {
 
     let mut rng = rand::rng(); // get rng object
 
-    // let mut dot_symbol = String::new();
-    // let mut asterisk_symbol = String::new();
-    // let mut o_symbol = String::new();
+    print!("enter dot: ");
+    std::io::stdout().flush().unwrap(); // makes the text print immediately
+    let mut dot_symbol = String::new();
+    std::io::stdin().read_line(&mut dot_symbol).unwrap(); // input to pause execution after the colored text is done (can verify the screen works)
+    dot_symbol.pop(); // removes the final character (in this case a \n)
+
+    print!("enter asterisk: ");
+    std::io::stdout().flush().unwrap(); // makes the text print immediately
+    let mut asterisk_symbol = String::new();
+    std::io::stdin().read_line(&mut asterisk_symbol).unwrap(); // input to pause execution after the colored text is done (can verify the screen works)
+    asterisk_symbol.pop(); // removes the final character (in this case a \n)
+
+    print!("enter o: ");
+    std::io::stdout().flush().unwrap(); // makes the text print immediately
+    let mut o_symbol = String::new();
+    std::io::stdin().read_line(&mut o_symbol).unwrap(); // input to pause execution after the colored text is done (can verify the screen works)
+    o_symbol.pop(); // removes the final character (in this case a \n)
 
     println!("About to generate screen. Press enter to continue.");
 
     // let dot_symbol = ".".to_string();
     // let asterisk_symbol = "*".to_string();
     // let o_symbol = "o".to_string();
-
-    let dot_symbol = String::from(".");
-    let asterisk_symbol = String::from("*");
-    let o_symbol = String::from("o");
 
     let mut star_symbols = vec![dot_symbol, asterisk_symbol, o_symbol];
 
@@ -60,7 +78,6 @@ fn main() {
 
     println!("About to generate screen. Press enter to continue.");
     std::io::stdout().flush().unwrap(); // makes the text print immediately
-
     let mut msg = "".to_string();
     std::io::stdin().read_line(&mut msg).unwrap(); // input to pause execution after the colored text is done (can verify the screen works)
 
@@ -68,7 +85,7 @@ fn main() {
 
     for _ in 1..=terminal_size.lines {
         for _ in 1..=terminal_size.columns {
-            let is_filled_in_with_star: u8 = rand::random_range(0..=2);
+            let is_filled_in_with_star: u8 = rand::random_range(0..star_symbols.len().try_into().unwrap());
             match is_filled_in_with_star {
                 // Source - https://stackoverflow.com/a/34215930
                 // Posted by DK., modified by community. See post 'Timeline' for change history
